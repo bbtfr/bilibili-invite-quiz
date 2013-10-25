@@ -1,0 +1,26 @@
+---
+layout: default
+title: 问题集
+---
+
+<div class="masthead clearfix">
+  <div class="inner">
+    <h3 class="masthead-brand">嗶哩嗶哩 激活问题补完计划 <br/> <small>问题集</small> </h3>
+    <ul class="nav masthead-nav">
+      <li><a href="{{ site.baseurl }}/index.html">首页</a></li>
+      <li class="active"><a href="{{ site.baseurl }}/invite_quiz.html">问题集</a></li>
+      <li><a href="{{ site.baseurl }}/contact.html">联系我们</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="inner cover">
+
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li class="lead"><span class="date">{{ post.date | date_to_string }}</span> &raquo; <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+
+</div>
+

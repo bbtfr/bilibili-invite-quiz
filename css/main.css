@@ -1,0 +1,98 @@
+.masthead-brand {
+  text-align: left;
+}
+
+.form-control {
+  color: white;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
+  -moz-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
+  box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
+  background: #222;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 0;
+}
+
+.form-control:focus {
+  outline: 0;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
+  -moz-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
+  box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
+}
+
+.btn-default {
+  color: #fff;
+  background: #222;
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0;
+  -moz-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0;
+  box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0;
+  border-color: #111;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active {
+  color: #ccc;
+  background: #111;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-color: #000;
+  outline: 0!important;
+}
+
+/*****************************************************************************/
+/*
+/* Home
+/*
+/*****************************************************************************/
+.posts {
+  list-style-type: none;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 20px;
+  -moz-column-count: 2;
+  -moz-column-gap: 20px;
+  column-count: 2;
+  column-gap: 20px;
+}
+
+.posts .date {
+  color: #aaa;
+  font-family: Monaco, "Courier New", monospace;
+  font-size: 80%;
+}
+
+/*****************************************************************************/
+/*
+/* Posts
+/*
+/*****************************************************************************/
+.post {
+  text-align: left;
+}
+
+.post .item {
+  min-height: 300px;
+}
+
+.post .carousel-control {
+  background-image: none;
+}
+
+.post .carousel-control.left {
+  left: -120px;
+}
+
+.post .carousel-control.right {
+  right: -120px;
+}
+
+.post .quiz {
+  padding-bottom: 5px 0 20px; 
+  font-size: 30px;
+}
+
+.post .radio {
+  padding: 5px 0 5px 20px;
+  font-size: 20px;
+}
+
+.post .jumpto {
+  margin: 50px 0 -50px;
+}

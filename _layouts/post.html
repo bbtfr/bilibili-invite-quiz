@@ -1,0 +1,96 @@
+---
+layout: base
+---
+
+<div class="site-wrapper">
+
+  <div class="site-wrapper-inner">
+
+    <div class="cover-container">
+
+      <div class="masthead clearfix">
+        <div class="inner">
+          <h3 class="masthead-brand">嗶哩嗶哩 激活问题补完计划 <br/> <small>{{ page.title }}（共{{ page.quiz_num }}个问题）</small> </h3>
+          <ul class="nav masthead-nav">
+            <li><a href="{{ site.baseurl }}/index.html">首页</a></li>
+            <li class="active"><a href="{{ site.baseurl }}/invite_quiz.html">问题集</a></li>
+            <li><a href="{{ site.baseurl }}/contact.html">联系我们</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="inner cover">
+        <div id="carousel" class="carousel slide post" data-ride="carousel" data-interval="false">
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+
+            {{ content }}
+          
+          </div>
+
+          <!-- Controls -->
+          <a class="left carousel-control" href="#carousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+          </a>
+          <a class="right carousel-control" href="#carousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+
+          <div class="col-lg-2 pull-right">
+            <div id="jumpto" class="input-group pull-right jumpto" data-toggle="tooltip" title="跳转到指定题目...">
+              <input type="text" class="form-control">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-share-alt"></i></button>
+              </span>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+
+      <div class="mastfoot">
+        <div class="inner">
+          <p>模板使用 Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="{{ site.baseurl }}/js/jquery.min.js"></script>
+<script src="{{ site.baseurl }}/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    var $carousel = $('#carousel');
+    $carousel.on('change', 'input[type="radio"]', function() {
+      $carousel.carousel('next');
+    });
+
+    var $jumpto = $('#jumpto');
+    $jumpto.tooltip();
+    
+    var $jumpto_input = $jumpto.find('input[type="text"]');
+    function jumpto() {
+      page = $jumpto_input.val();
+      $carousel.carousel(parseInt(page)-1);
+      $jumpto_input.val('');
+    }
+
+    $jumpto.on('keyup', 'input[type="text"]', function(e) {
+      if(e.keyCode == 13) {
+        jumpto();
+      }
+    });
+    $jumpto.on('click', 'button', function() {
+      jumpto();
+    });
+
+  })
+</script>

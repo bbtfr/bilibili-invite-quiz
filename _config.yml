@@ -1,0 +1,4 @@
+name: 嗶哩嗶哩 激活问题补完计划
+markdown: redcarpet
+pygments: true
+baseurl: /bilibili-invite-quiz
