@@ -37,7 +37,7 @@
 .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active {
   color: #ccc;
   background: #111;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.5);
   border-color: #000;
   outline: 0!important;
 }
