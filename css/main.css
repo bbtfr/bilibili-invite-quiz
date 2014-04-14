@@ -1,6 +1,6 @@
 .cover {
   max-height: 480px;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .masthead-brand {
