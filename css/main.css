@@ -1,6 +1,14 @@
 .cover {
   max-height: 480px;
-  overflow: hidden;
+  overflow-y: hidden;
+}
+
+.cover.visible {
+  overflow: visible;
+}
+
+.cover.scroll {
+  overflow: scroll;
 }
 
 .masthead-brand {
