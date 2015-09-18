@@ -1,30 +1,30 @@
 嗶哩嗶哩 激活问题补完计划
-====================
-
+===
 
 目标
---------------------
+---
 此项目目标是建立完整的bilibili新手激活问题集，并采用神经网络算法配合统计方法和人肉识别，建立答案库
 
-
-面临问题
---------------------
-* ~~由于bilibili新手问题，每天每账号只能答题5次，且答题间隔为10分钟左右，数据源的获得比较困难~~
-* 由于bilibili新手问题网页更新，之前的爬虫脚本失效，但抓取问题集变得很容易了，重写了爬虫脚本
-
 已解决问题
---------------------
+---
 * 一个激活问题抓取爬虫（Ruby脚本）
 * 一个激活问题集（考虑到便于查阅，使用YAML格式）
-* ~~问题集同步到MongoHQ（一个MongoDB的PaaS）上，之后识别结果的数据也会储存在MongoHQ上~~
 * 一个激活问题集转网页的脚本，用于展示题目，收集志愿者人肉识别的结果
 
-
-TODO LIST
---------------------
+TODO
+---
 * 计划使用 React 或 Backbone 重写Web端
 * 数据储存迁移到 LeanCloud 上
 * 激活问题爬虫加入随机答题，抓取得分的功能
 * 一个激活答案集
 * 由于新手问题答题的种种限制，考虑编写一个bilibili注册机
-* ~~代码向Python迁移（？）~~ 已放弃，Ruby是最好的语言 XD
+
+Usage
+---
+```shell
+git clone git@github.com:bbtfr/bilibili-invite-quiz.git && cd bilibili-invite-quiz
+
+# Add your bilibili cookie string to db/auth_cookies.yml
+ruby bin/thor.rb grab
+
+```
