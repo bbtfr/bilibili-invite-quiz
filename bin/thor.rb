@@ -46,6 +46,21 @@ class Quiz < Thor
     dump_quiz_yaml
   end
 
+  desc "info", ""
+  def info
+    puts "Quiz: #{all_quiz.length}"
+    grouped_quiz = all_quiz.group_by do |id, quiz|
+      quiz["type"].class
+    end
+    grouped_quiz[Array] = grouped_quiz[Array].group_by do |id, quiz|
+      quiz["type"].length
+    end
+
+    puts "  with specific type: #{grouped_quiz[Fixnum].length}"
+    puts "  with 2 types: #{grouped_quiz[Array][2].length}"
+    puts "  with 3 types: #{grouped_quiz[Array][3].length}"
+  end
+
 private
 
   def auth_cookie
@@ -66,11 +81,11 @@ private
         @last_quiz_type_ids = @quiz_type_ids.sample(3)
       end
 
-      say_status :debug, "request_count = #{@request_count}"
-      say_status :debug, "weight_sum = #{@weight_sum}"
-      say_status :debug, "weight_avg = #{@weight_avg}"
-      say_status :debug, "weight_length = #{@weight_length}"
-      say_status :debug, "quiz_type_ids = #{@last_quiz_type_ids}"
+      # say_status :debug, "request_count: #{@request_count}"
+      # say_status :debug, "weight_sum: #{@weight_sum}"
+      # say_status :debug, "weight_avg: #{@weight_avg}"
+      # say_status :debug, "weight_length: #{@weight_length}"
+      # say_status :debug, "quiz_type_ids: #{@last_quiz_type_ids}"
 
       return @last_quiz_type_ids
     end
@@ -103,7 +118,6 @@ private
 
     new_quiz = format_quiz response["data"], type_ids
 
-    say_status :info, "Got #{new_quiz.length} quiz."
     new_quiz
   end
 
@@ -117,19 +131,28 @@ private
   end
 
   def merge_quiz_yaml new_quiz
-    new_quiz_length = (new_quiz.keys - all_quiz.keys).length
-
     update_quiz_types_length = 0
     (new_quiz.keys & all_quiz.keys).each do |key|
-      all_types = all_quiz[key]["type"]
-      new_types = new_quiz[key]["type"]
-      next if all_types.nil? || all_types.kind_of?(Integer) || all_types == new_types
+      all_type = all_quiz[key]["type"]
+      next if all_type.nil?
+
+      new_quiz[key]["type"] = all_type and next if all_type.kind_of?(Integer)
+
+      all_type.sort!
+      new_type = new_quiz[key]["type"].sort
+      next if all_type == new_type
 
       update_quiz_types_length += 1
-      new_types = new_types & all_types
-      new_types = new_types.first if new_types.length == 1
-      new_quiz[key]["type"] = new_types
+      new_type = new_type & all_type
+      new_type = new_type.first if new_type.length <= 1
+
+      # say_status :debug, "type: #{all_type} => #{new_type}"
+
+      new_quiz[key]["type"] = new_type
     end
+
+    new_quiz_length = new_quiz.length
+
     say_status :info, "Got #{new_quiz_length} new quiz, update #{update_quiz_types_length} quiz types, #{all_quiz.length + new_quiz_length} in total."
 
     @weight_length = new_quiz_length + update_quiz_types_length
