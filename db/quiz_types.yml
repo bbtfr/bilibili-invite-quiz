@@ -1,52 +1,47 @@
 ---
-status: true
-data:
-  list:
-  - name: "动画"
-    fields:
-    - id: 11
-      name: "动画声优"
-    - id: 12
-      name: "动漫作品"
-    - id: 13
-      name: "动漫内容"
-  - name: "音乐"
-    fields:
-    - id: 14
-      name: Vocaloid
-    - id: 15
-      name: ACG音乐
-    - id: 16
-      name: "三次元音乐"
-  - name: "游戏"
-    fields:
-    - id: 17
-      name: "动作射击"
-    - id: 19
-      name: "冒险格斗"
-    - id: 21
-      name: "策略模拟"
-    - id: 23
-      name: "音乐体育"
-    - id: 25
-      name: "角色扮演"
-  - name: "科学技术"
-    fields:
-    - id: 27
-      name: "军事"
-    - id: 28
-      name: "科技数码"
-    - id: 30
-      name: "理综"
-    - id: 31
-      name: "文综"
-  - name: "影视剧"
-    fields:
-    - id: 5
-      name: "影视剧"
-  - name: "鬼畜"
-    fields:
-    - id: 9
-      name: "鬼畜"
-  endTime: 1442559974
-  currentTime: 1442559547
+- name: "动画"
+  fields:
+  - id: 11
+    name: "动画声优"
+  - id: 12
+    name: "动漫作品"
+  - id: 13
+    name: "动漫内容"
+- name: "音乐"
+  fields:
+  - id: 14
+    name: Vocaloid
+  - id: 15
+    name: ACG音乐
+  - id: 16
+    name: "三次元音乐"
+- name: "游戏"
+  fields:
+  - id: 17
+    name: "动作射击"
+  - id: 19
+    name: "冒险格斗"
+  - id: 21
+    name: "策略模拟"
+  - id: 23
+    name: "音乐体育"
+  - id: 25
+    name: "角色扮演"
+- name: "科学技术"
+  fields:
+  - id: 27
+    name: "军事"
+  - id: 28
+    name: "科技数码"
+  - id: 30
+    name: "理综"
+  - id: 31
+    name: "文综"
+- name: "影视剧"
+  fields:
+  - id: 5
+    name: "影视剧"
+- name: "鬼畜"
+  fields:
+  - id: 9
+    name: "鬼畜"
